@@ -1,0 +1,9 @@
+從最後一個非leaf的node開始調整(floor(size/2)-1)
+ 1.找出parent和左右child中最大/小的
+ 2.若非parent則swap其值,再由剛剛比較出最大/小的位置為root依上述方式調整
+
+1) max heap
+parent node的值 > 其child node的值
+
+2) min heap
+parent node的值 < 其child node的值

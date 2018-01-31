@@ -1,0 +1,19 @@
+1)single
+優點:較節省空間,插入及刪除node時須修改的link較少
+缺點:無法找到前一個node,插入及刪除時須提供前一個node的pointer,否則要由head開始搜尋
+宣告:struct ListNode{
+            int data;
+            struct ListNode *link;
+     };
+     typedef struct ListNode *Nodeptr;
+
+2)double
+優點:pointer可雙向移動,插入及刪除時不須提供前一個node的pointer
+缺點: 占空間,插入及刪除node時須修改的link較多
+宣告:struct ListNode{
+            int data;
+            struct ListNode *llink,*rlink;
+     };
+     typedef struct ListNode *Nodeptr;
+
+3) Action: create,insert,delete.search,free,show,length,reverse

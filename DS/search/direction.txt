@@ -1,0 +1,28 @@
+1) Binary search
+原理: 針對已排序的序列,每次挑選中間位置的資料來比對，若該資料小於目標值，則縮小範圍為左半部，反之致右半部
+演算法: while left<=right
+	     find mid 
+	     if target< a[mid] then right=mid-1
+	     else if target>a[mid] then left=mid+1
+	     else return mid 
+特性:O(logn)
+
+2) BFS
+原理:由近而遠追蹤graph的所有頂點,若i比j先被追蹤到,則i的直接後繼node又會比j的先追蹤到
+演算法:create a queue Q 
+       mark v as visited and put v into Q 
+       while Q is non-empty 
+            remove the head u of Q 
+            mark and enqueue all (unvisited) neighbours of u
+特性:利用queue處理,O(n^2)
+
+3) DFS
+原理:用來遍尋tree或graph,由root或某一node開始，先探尋edge上未搜尋的node，並儘可能深的搜索，
+     直到該節點的所有邊上節點都已探尋；就backtracking到前一個節點，重覆探尋未搜尋的節點，
+     直到找到目的節點或遍尋全部節點 
+演算法: dfs(vertex v):
+    	   mark v as visited
+           for each w adjacent to v 
+              if w unvisited then 
+                 dfs(w)
+特性:利用stack處理 or recursive,O(n^2)

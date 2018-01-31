@@ -1,0 +1,64 @@
+1) Insertion sort
+
+原理: 將資料逐一插入到以排序好的序列中
+演算法: for i <- 2 to n do 
+	   將a[i] 插入a[1]~a[i-1]之間適當的位置,使a[1]~a[i]排好
+
+特性: stable,O(n^2)
+
+2) Bubble sort
+
+原理: 每回由左至右比較相鄰的元素,判斷是否交換,若該回沒有交換的動作或進行n-1回則結束
+演算法: for i<-n-1 to 1 do
+ 	   for j<-1 to i do
+		if a[j]>j[i+1] then swap(a[j],a[j+1])
+特性: stable,O(n^2)
+
+3) selection sort
+
+原理: 每次挑最小/最大元素,並將他移至序列開頭/尾端
+演算法: for i<-1 to n-1 do
+	   由 a[i]~a[n] 中找出最小者,以a[min]代表交換 a[i]和a[min]
+特性: unstable, O(n^2)
+
+4) quick sort
+
+原理:選定一個Pivot(開頭),i由左邊開始找大於pivot的元素,若沒有則向右移動i,j由右邊開始找小於pivot的元素, 
+      若沒有則向左移動j,直到i,j位置交錯時,將pivot和j交換
+演算法:While 左子串列或右子串列的元素數 >= 1
+     1.將比Pivot小的數值移到Pivot左邊，形成左子串列
+     2.將比Pivot大的數值移到Pivot右邊，形成右子串列
+     3.分別對左子串列、右子串列作上述步驟 
+特性: unstable, O(nlogn), 額外空間 O(logn~n)
+
+
+5) heap sort
+
+原理:將root和最後一個node交換,將交換後最後一個node取出,重新調整tree至(min/max tree),並重複此步驟
+演算法: 1. for i->floor(n/2)-1 to 0
+		adjust從最後一個非leaf元素開始,和左右子比找出最大並交換,從交換位置再做上述調整
+        2. for i->n-1 to 1
+		root和最後的leaf做swap,之後再adjust 
+特性:unstable, O(nlogn)
+
+6) merge sort
+
+原理: 將序列中的元素分割成單一個元素,開始兩兩合併，每次合併同時進行排序
+演算法: If r > l
+     1. Find the middle point to divide the array into two halves:  
+             middle m = (l+r)/2
+     2. Call mergeSort for first half:   
+             Call mergeSort(arr, l, m)
+     3. Call mergeSort for second half:
+             Call mergeSort(arr, m+1, r)
+     4. Merge the two halves sorted in step 2 and 3:
+             Call merge(arr, l, m, r)
+
+特性: stable, O(nlogn), 額外空間O(n)
+
+
+
+
+
+
+
