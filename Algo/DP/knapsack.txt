@@ -1,0 +1,17 @@
+---knapsack problem---
+
+(1) fractional knapsack 
+定義 : 一背包容量W,有n件物品,物品i具重量Wi和價值Vi,欲取物不超過W且總V最高,可拿物品的部分不一定要全拿之情況下,該取哪些物品?取多少?
+
+想法 : 每單位重量之價值Vi/Wi由大到小排序,由大的開始取直到物品取完或總重<=W為止,為greedy,O(nlogn)
+
+
+(2) 0/1 knapsack 
+定義 : 一背包容量W,有n件物品,物品i具重量Wi和價值Vi,欲取物不超過W且總V最高,拿物品一定要全拿或不拿之情況下,該取哪些物品?
+
+想法 :             0                             ,if i=0 or k=0 (沒有物品,不能負重)
+	  S[i,k]=  S[i-1,k]                      ,if i,k!=0 and Wi>k (超過負重)
+                   Max(S[i-1,k-Wi]+Vi,S[i-1,k])  ,if i,k!=0 and Wi<=k
+
+S[i,k]為當可負重k,並可拿物品1,2,...,i下所得最高價值,for i <- 1 to n;for k <- 1 to W
+用DP有optimal,greedy無法,因為無法用區域解構成全域最佳解,O(nW)且為NP-complete
