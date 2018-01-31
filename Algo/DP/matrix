@@ -1,0 +1,9 @@
+---matrix-chain multiplication---
+
+定義 : n個matrix A1~An,其中Ai=Pi-1 x Pi,以何種掛號法計算A1A2x...xAn,可使乘積總運算量最少
+
+舉例 : A=pxq , B=qxr, AB=pxr 則乘積總運算量為pqr
+想法 : m[i,j]為 Aix Ai+1 x...xAj 所需最少乘積總運算量
+                 
+      m[i,j] = 0                                             ,if i=j (一個matrix時)
+               Min(i<=k<=j){m[i,k]+m[k+1,j]+Pi-1 x Pk x Pj}  ,if i<j

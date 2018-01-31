@@ -1,0 +1,13 @@
+---traveling saleperson problem---
+
+定義 : G=(V,E)中每條E有cost,由某一點出發,求經過此G每個v恰一次並回到原點之tour path中,其cost 最小者 
+
+想法 : g(i,S) 表由頂點i出發,可經由S中所有頂點而抵達i的最佳路徑成本,若由1出發,下一個城市為 k,則最佳路徑成本必為C1k加上由k到1的最佳路徑成本,採每次加一個點,慢慢將S的點數變多並更新其        
+g(i,S),直到n-1時,最後計算出的從1至k之距離及k到1之path中最小者
+g(1,V-{1}) = Min(2<=k<=n){C1k+g(k,V-{1,k})}
+
+步驟 : |S|表示從某一點經過|S|個點回到原點之cost
+1) 先算所有V到原點的cost Ci1,1<=i<=n
+2) for |S|=1 to n-1 do g(i,S) = Min(j belong to S){Cij+g(j,S-{j})}
+3) compute g(1,V-{1}) = Min(2<=k<=n){C1k+g(k,V-{1,k})}
+
