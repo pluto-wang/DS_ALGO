@@ -1,0 +1,12 @@
+---Bellman-Ford---
+允許有負邊,但不能有負cycle
+演算法:
+for i <-1 to |V|-1  //經過幾個邊
+   for each e(u,v)屬於E  //檢查所有邊
+        if d[v] > d[u]+w(u,v) then d[v]<-d[u]+w(u,v)
+
+for each e(u,v)屬於E  // check 有無負cycle
+	if d[v]>d[u]+w(u,v) then return false
+
+return true
+

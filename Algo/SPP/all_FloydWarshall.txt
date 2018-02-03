@@ -1,0 +1,23 @@
+---Floyd-Warshall--
+
+All pair shortest path: 給一圖,找任兩點的最短路徑
+允許有負邊但不能有負cycle,O(|V|^3)
+
+原理: 令A_k(i,j)表示由i到j指經由1~k點的最短路徑
+我們要求A_n(i,j),起始為A_0(i,j),由鄰接矩陣表示之
+
+遞迴式:A_k(i,j)=min{A_k-1(i,j),A_k-1(i,k)+A_k-1(k,j)}
+
+演算法: 
+for i <-1 to n
+   for j <-1 to n
+       a[i,j] <- cost[i,j]
+       pi[i,j] <- j
+for k <-1 to n
+    for i <-1 to n
+        for j <-1 to n	
+	    if a[i,k]+a[k,j] < a[i,j] 
+		 a[i,j]= a[i,k]+a[k,j]
+   		 pi[i,j] <- pi[i,k]
+
+

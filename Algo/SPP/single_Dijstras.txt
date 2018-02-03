@@ -1,0 +1,15 @@
+--- Dijkstra's ----
+
+single shortest path proble : 某一點到圖中其他點的最短路徑 
+ 
+在沒有負邊的情況下,可以使用為greedy策略
+1) cost[u,v]:邊(u,v)之成本
+2) S 為已找到最短路徑之點集合
+3) dist[w]: 起點到w,目前已找到的最短路徑長度(皆為S中的點)
+4) pred[w]: 起點到w最短路徑上,w的直接前行者
+
+演算法: 
+1) 將V-S中選擇一個dist最小的點u
+2) 將點u加入S
+3) 檢查每個(u,w)邊,若w不屬於S,則計算 dist[w]=Min(dist[w],dist[u]+cost(u,w))
+ 
