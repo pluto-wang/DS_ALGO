@@ -21,9 +21,10 @@ void search(int);
 void preorder(Treeptr);
 void inorder(Treeptr);
 void postorder(Treeptr);
+void getDepth(Treeptr);
 
 Treeptr root;
-
+int d = 0, num = 0, dep[15];
 void main(){
     creat(); // 3 node
     
@@ -43,6 +44,12 @@ void main(){
     printf("\n");
     printf("postorder: ");
     postorder(root);
+    getDepth(root);
+    printf("\n");
+    printf("leaf depth: ");
+    for(int i=0; i<15; ++i)
+        printf("%d ",dep[i]);
+        
     
 }
 void creat(){
@@ -79,6 +86,16 @@ void insert(int num){
     else
         x->right =node;
     }
+}
+
+void getDepth(Treeptr n){
+    if(n == NULL) return;
+    ++d;
+    getDepth(n->left);
+    if(n->left == NULL && n->right == NULL) //leaf
+            dep[num++] = d;
+    getDepth(n->right);
+    --d;
 }
 
 void search(int target){
@@ -129,5 +146,3 @@ void postorder(Treeptr node){ //left->right->root
     postorder(node->right);
     printf("%d ",node->data);
 }
-
-
