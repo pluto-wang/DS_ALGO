@@ -9,9 +9,9 @@
 2) Bubble sort
 
 原理: 每回由左至右比較相鄰的元素,判斷是否交換,若該回沒有交換的動作或進行n-1回則結束
-演算法: for i<-n-1 to 1 do
- 	   for j<-1 to i do
-		if a[j]>j[i+1] then swap(a[j],a[j+1])
+演算法: for i<-1 to n-1 do
+ 	   for j<-1 to n-1-i do
+		if a[j]<a[j-1] then swap(a[j],a[j-1])
 特性: stable,O(n^2)
 
 3) selection sort
