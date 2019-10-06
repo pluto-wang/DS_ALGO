@@ -24,7 +24,7 @@
 4) quick sort
 
 原理:選定一個Pivot(開頭),i由左邊開始找大於pivot的元素,若沒有則向右移動i,j由右邊開始找小於pivot的元素, 
-      若沒有則向左移動j,直到i,j位置交錯時,將pivot和j交換
+      若沒有則向左移動j,直到i,j位置交錯時,將pivot和j交換 (divide and conquer)
 演算法:While 左子串列或右子串列的元素數 >= 1
      1.將比Pivot小的數值移到Pivot左邊，形成左子串列
      2.將比Pivot大的數值移到Pivot右邊，形成右子串列
@@ -43,7 +43,7 @@
 
 6) merge sort
 
-原理: 將序列中的元素分割成單一個元素,開始兩兩合併，每次合併同時進行排序
+原理: 將序列中的元素分割成單一個元素,開始兩兩合併，每次合併同時進行排序 (divide and conquer)
 演算法: If r > l
      1. Find the middle point to divide the array into two halves:  
              middle m = (l+r)/2
