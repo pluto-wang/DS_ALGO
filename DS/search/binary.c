@@ -1,6 +1,6 @@
 #include <stdio.h>
 int binary_search(int*,int,int);
-int BST(int*,int,int,int);
+int BS(int*,int,int,int);
 
 int main(){
     
@@ -30,7 +30,7 @@ int binary_search(int *a, int size,int n){
     return -1;
 }
 // recursive
-int BST(int *a,int left,int right,int key){
+int BS(int *a,int left,int right,int key){
     if (left>right)
         return -1;
     int mid = (left+right)/2;

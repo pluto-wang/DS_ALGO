@@ -5,7 +5,7 @@
 	     if target< a[mid] then right=mid-1
 	     else if target>a[mid] then left=mid+1
 	     else return mid 
-特性:O(logn)
+特性:O(logn), 資料量大適用
 
 2) BFS
 原理:由近而遠追蹤graph的所有頂點,若i比j先被追蹤到,則i的直接後繼node又會比j的先追蹤到
