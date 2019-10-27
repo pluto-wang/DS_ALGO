@@ -80,17 +80,20 @@ void search(int target){
     if(head!=NULL){
         Nodeptr curr;
         curr = head->link;
-        while(curr->data!=target && curr->link!=NULL){
+        while(curr->link!=NULL){
+            if (curr->data == target){
+                printf("The target %d is in index %d\n",target,ind+1); 
+                ind = -1;
+                break;
+            }
             ind++;
             curr=curr->link;
         }
     }
     else
         printf("Empty\n");
-    if(ind ==0)
-        printf("can't search the element! ");
-    else
-        printf("The target %d is in index %d\n",target,ind+1);
+    if (ind != -1){
+        printf("can't search the element!\n");
 }
 
 void reverse(){
